@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--My Places-->
         <scene sceneID="Bsf-gW-3sC">
             <objects>
                 <tableViewController id="q6M-4U-tGA" customClass="MainViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,13 +16,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="HlO-JB-KZZ">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="75" id="HlO-JB-KZZ">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HlO-JB-KZZ" id="YU7-1D-rXQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Macdonalds" translatesAutoresizingMaskIntoConstraints="NO" id="nss-qw-J0S">
+                                            <rect key="frame" x="20" y="0.0" width="75" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="9eM-6W-GI1"/>
+                                                <constraint firstAttribute="width" secondItem="nss-qw-J0S" secondAttribute="height" multiplier="1:1" priority="999" id="ABP-Hg-JwO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x5-f2-xVy">
+                                            <rect key="frame" x="115" y="11" width="279" height="53"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4x5-f2-xVy" firstAttribute="leading" secondItem="nss-qw-J0S" secondAttribute="trailing" constant="20" id="5If-m3-YoJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4x5-f2-xVy" secondAttribute="trailing" id="5iC-Qa-ucZ"/>
+                                        <constraint firstItem="nss-qw-J0S" firstAttribute="top" secondItem="YU7-1D-rXQ" secondAttribute="top" id="CPq-hU-1hr"/>
+                                        <constraint firstItem="nss-qw-J0S" firstAttribute="leading" secondItem="YU7-1D-rXQ" secondAttribute="leading" constant="20" id="YfW-h7-6H3"/>
+                                        <constraint firstItem="4x5-f2-xVy" firstAttribute="top" secondItem="YU7-1D-rXQ" secondAttribute="topMargin" id="kBg-sp-6Kw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4x5-f2-xVy" secondAttribute="bottom" id="sHX-ed-YhM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="nss-qw-J0S" firstAttribute="height" secondItem="HlO-JB-KZZ" secondAttribute="height" id="RGf-JZ-jfY"/>
+                                </constraints>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,11 +56,11 @@
                             <outlet property="delegate" destination="q6M-4U-tGA" id="4Kx-X4-C55"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="v60-aE-N8p"/>
+                    <navigationItem key="navigationItem" title="My Places" id="v60-aE-N8p"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tq9-52-M8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="73"/>
+            <point key="canvasLocation" x="18.840579710144929" y="72.991071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V7Y-JF-TOT">
@@ -43,6 +69,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XD3-6I-erx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="q6M-4U-tGA" kind="relationship" relationship="rootViewController" id="ohm-E6-tXp"/>
@@ -54,6 +83,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Macdonalds" width="341.5" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
