@@ -21,13 +21,11 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let imageView = cell.viewWithTag(1) as? UIImageView
-        let textLabel = cell.viewWithTag(2) as? UILabel
-        imageView?.image = UIImage(named: restaurantNames[indexPath.row])
-        imageView?.layer.cornerRadius = cell.frame.size.height / 2
-        imageView?.clipsToBounds = true
-        textLabel?.text = restaurantNames[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        cell.nameLabel.text = restaurantNames[indexPath.row]
+        cell.imageOfPlace.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.height / 2
+        cell.imageOfPlace?.clipsToBounds = true
         return cell
     }
     // MARK: - TabelViewDelagate
