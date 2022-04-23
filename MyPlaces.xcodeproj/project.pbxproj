@@ -15,6 +15,7 @@
 		DFEE20D0280F22A800E1B133 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20CF280F22A800E1B133 /* MainViewController.swift */; };
 		DFEE20D22811BDD200E1B133 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20D12811BDD200E1B133 /* CustomTableViewCell.swift */; };
 		DFEE20D42811C64E00E1B133 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20D32811C64E00E1B133 /* PlaceModel.swift */; };
+		DFEE20D6281316C600E1B133 /* NewPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DFEE20CF280F22A800E1B133 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DFEE20D12811BDD200E1B133 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		DFEE20D32811C64E00E1B133 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				DFEE20D32811C64E00E1B133 /* PlaceModel.swift */,
 				DFEE20D12811BDD200E1B133 /* CustomTableViewCell.swift */,
 				DFEE20BD280F1ECA00E1B133 /* SceneDelegate.swift */,
+				DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */,
 				DFEE20C1280F1ECA00E1B133 /* Main.storyboard */,
 				DFEE20C4280F1ECC00E1B133 /* Assets.xcassets */,
 				DFEE20C6280F1ECC00E1B133 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				DFEE20D0280F22A800E1B133 /* MainViewController.swift in Sources */,
 				DFEE20BC280F1ECA00E1B133 /* AppDelegate.swift in Sources */,
 				DFEE20D42811C64E00E1B133 /* PlaceModel.swift in Sources */,
+				DFEE20D6281316C600E1B133 /* NewPlaceVC.swift in Sources */,
 				DFEE20D22811BDD200E1B133 /* CustomTableViewCell.swift in Sources */,
 				DFEE20BE280F1ECA00E1B133 /* SceneDelegate.swift in Sources */,
 			);
