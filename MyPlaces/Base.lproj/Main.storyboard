@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7t-CL-eGi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7t-CL-eGi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,6 +78,7 @@
                                     <outlet property="locationLabel" destination="Uk0-ZV-nJw" id="dyJ-UT-CCN"/>
                                     <outlet property="nameLabel" destination="4x5-f2-xVy" id="8p3-Fy-KDd"/>
                                     <outlet property="typeLabel" destination="VYj-Dw-Der" id="0dE-uc-fBq"/>
+                                    <segue destination="Mii-L5-sUm" kind="show" identifier="showDetail" id="uUQ-MA-tcJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,7 +87,7 @@
                             <outlet property="delegate" destination="q6M-4U-tGA" id="4Kx-X4-C55"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Places" id="v60-aE-N8p">
+                    <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="v60-aE-N8p">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sam-qW-rU9">
                             <connections>
                                 <segue destination="ffY-uZ-04e" kind="presentation" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="Ooo-Hr-inC"/>
@@ -269,7 +270,7 @@
                             <outlet property="delegate" destination="Mii-L5-sUm" id="nAo-as-hzm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Place" id="NdQ-JZ-gMH">
+                    <navigationItem key="navigationItem" title="New Place" largeTitleDisplayMode="always" id="NdQ-JZ-gMH">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nDw-Wy-cqy">
                             <connections>
                                 <action selector="cancelAction:" destination="Mii-L5-sUm" id="dYs-LN-6PQ"/>
@@ -292,14 +293,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iys-Fo-Nje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="fiD-mf-sHw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="72"/>
+            <point key="canvasLocation" x="886" y="73"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V7Y-JF-TOT">
             <objects>
                 <navigationController id="v7t-CL-eGi" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XD3-6I-erx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XD3-6I-erx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
@@ -329,9 +330,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GS3-So-Lol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776.81159420289862" y="71.651785714285708"/>
+            <point key="canvasLocation" x="886" y="-618"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9jO-dI-k6g"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="DefaultPhoto" width="640" height="640"/>
         <image name="Macdonalds" width="341.5" height="200"/>

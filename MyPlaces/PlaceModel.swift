@@ -7,20 +7,17 @@
 
 import Foundation
 import UIKit
-struct Place{
-    var name: String
-    var location: String?
-    var type: String?
-    var restaurantImage: String?
-    var image: UIImage?
-    
-    static let restaurantNames = ["Паштет", "Eat & Go", "Рваный бургер", "Burger King", "Macdonalds", "Своя компания"]
-    static func getPlaces () -> [Place]{
-        var places = [Place]()
-        
-        for place in restaurantNames {
-            places.append(Place(name: place, location: "Екатеринбург", type: "Ресторан", restaurantImage: place, image: nil))
-        }
-        return places
+import RealmSwift
+class Place: Object {
+    @Persisted var name = ""
+    @Persisted var location: String?
+    @Persisted var type: String?
+    @Persisted var imageData: Data?
+    convenience init(name: String, location: String?, type: String?, imageData: Data?){
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageData = imageData
     }
 }

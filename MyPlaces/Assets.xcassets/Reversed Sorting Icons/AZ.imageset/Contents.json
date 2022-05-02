@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "EatAndGo@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "EatAndGo@2x.png",
+      "filename" : "AZ@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "EatAndGo@3x.png",
+      "filename" : "AZ@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

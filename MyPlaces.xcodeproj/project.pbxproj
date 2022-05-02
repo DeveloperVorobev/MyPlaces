@@ -7,21 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C0B21AE1FCFFD0D93413550 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD2D1CB00E4F865184BC417 /* Pods_MyPlaces.framework */; };
+		DF6C66DC281C5BA000781199 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66DB281C5BA000781199 /* Realm */; };
+		DF6C66DE281C5BA000781199 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66DD281C5BA000781199 /* RealmSwift */; settings = {ATTRIBUTES = (Required, ); }; };
+		DF6C66E1281C625F00781199 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E0281C625F00781199 /* Realm */; };
+		DF6C66E3281C625F00781199 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E2281C625F00781199 /* RealmSwift */; };
+		DF6C66E8281EE65F00781199 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20C1280F1ECA00E1B133 /* Main.storyboard */; };
+		DF6C66E9281EE65F00781199 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20C4280F1ECC00E1B133 /* Assets.xcassets */; };
+		DF6C66EA281EE65F00781199 /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20C6280F1ECC00E1B133 /* LaunchScreen.storyboard */; };
+		DFDFBE982819A58D00C10CE4 /* StoregeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */; };
 		DFEE20BC280F1ECA00E1B133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20BB280F1ECA00E1B133 /* AppDelegate.swift */; };
 		DFEE20BE280F1ECA00E1B133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20BD280F1ECA00E1B133 /* SceneDelegate.swift */; };
-		DFEE20C3280F1ECA00E1B133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEE20C1280F1ECA00E1B133 /* Main.storyboard */; };
-		DFEE20C5280F1ECC00E1B133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEE20C4280F1ECC00E1B133 /* Assets.xcassets */; };
-		DFEE20C8280F1ECC00E1B133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEE20C6280F1ECC00E1B133 /* LaunchScreen.storyboard */; };
 		DFEE20D0280F22A800E1B133 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20CF280F22A800E1B133 /* MainViewController.swift */; };
 		DFEE20D22811BDD200E1B133 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20D12811BDD200E1B133 /* CustomTableViewCell.swift */; };
 		DFEE20D42811C64E00E1B133 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20D32811C64E00E1B133 /* PlaceModel.swift */; };
 		DFEE20D6281316C600E1B133 /* NewPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DFA8947E2815BA8100A93B7C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		DFE210AA281C4AD10070D278 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0AD2D1CB00E4F865184BC417 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78D86103024BF93DFE8C749D /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
+		DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregeManager.swift; sourceTree = "<group>"; };
 		DFEE20B8280F1ECA00E1B133 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE20BB280F1ECA00E1B133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFEE20BD280F1ECA00E1B133 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +58,6 @@
 		DFEE20D12811BDD200E1B133 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		DFEE20D32811C64E00E1B133 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceVC.swift; sourceTree = "<group>"; };
-		E32E665D55575AFA14D8FB8F /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,38 +65,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C0B21AE1FCFFD0D93413550 /* Pods_MyPlaces.framework in Frameworks */,
+				DF6C66E3281C625F00781199 /* RealmSwift in Frameworks */,
+				DF6C66E1281C625F00781199 /* Realm in Frameworks */,
+				DF6C66DE281C5BA000781199 /* RealmSwift in Frameworks */,
+				DF6C66DC281C5BA000781199 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15D4E6D44E528978180A7ADB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				78D86103024BF93DFE8C749D /* Pods-MyPlaces.debug.xcconfig */,
-				E32E665D55575AFA14D8FB8F /* Pods-MyPlaces.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		DB8AA975AF19B1B757364F2F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0AD2D1CB00E4F865184BC417 /* Pods_MyPlaces.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DFEE20AF280F1ECA00E1B133 = {
 			isa = PBXGroup;
 			children = (
 				DFEE20BA280F1ECA00E1B133 /* MyPlaces */,
 				DFEE20B9280F1ECA00E1B133 /* Products */,
-				15D4E6D44E528978180A7ADB /* Pods */,
-				DB8AA975AF19B1B757364F2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +100,7 @@
 				DFEE20D12811BDD200E1B133 /* CustomTableViewCell.swift */,
 				DFEE20BD280F1ECA00E1B133 /* SceneDelegate.swift */,
 				DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */,
+				DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */,
 				DFEE20C1280F1ECA00E1B133 /* Main.storyboard */,
 				DFEE20C4280F1ECC00E1B133 /* Assets.xcassets */,
 				DFEE20C6280F1ECC00E1B133 /* LaunchScreen.storyboard */,
@@ -108,16 +116,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFEE20CC280F1ECC00E1B133 /* Build configuration list for PBXNativeTarget "MyPlaces" */;
 			buildPhases = (
-				2F30EF93BF6E1936ACFDE3F5 /* [CP] Check Pods Manifest.lock */,
 				DFEE20B4280F1ECA00E1B133 /* Sources */,
 				DFEE20B5280F1ECA00E1B133 /* Frameworks */,
-				DFEE20B6280F1ECA00E1B133 /* Resources */,
+				DFA8947E2815BA8100A93B7C /* Embed Frameworks */,
+				DFE210AA281C4AD10070D278 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MyPlaces;
+			packageProductDependencies = (
+				DF6C66DB281C5BA000781199 /* Realm */,
+				DF6C66DD281C5BA000781199 /* RealmSwift */,
+				DF6C66E0281C625F00781199 /* Realm */,
+				DF6C66E2281C625F00781199 /* RealmSwift */,
+			);
 			productName = MyPlaces;
 			productReference = DFEE20B8280F1ECA00E1B133 /* MyPlaces.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +160,10 @@
 				Base,
 			);
 			mainGroup = DFEE20AF280F1ECA00E1B133;
+			packageReferences = (
+				DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DF6C66DF281C625F00781199 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = DFEE20B9280F1ECA00E1B133 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -155,53 +173,19 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		DFEE20B6280F1ECA00E1B133 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFEE20C8280F1ECC00E1B133 /* LaunchScreen.storyboard in Resources */,
-				DFEE20C5280F1ECC00E1B133 /* Assets.xcassets in Resources */,
-				DFEE20C3280F1ECA00E1B133 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2F30EF93BF6E1936ACFDE3F5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MyPlaces-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		DFEE20B4280F1ECA00E1B133 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF6C66E8281EE65F00781199 /* Main.storyboard in Sources */,
+				DF6C66E9281EE65F00781199 /* Assets.xcassets in Sources */,
+				DF6C66EA281EE65F00781199 /* LaunchScreen.storyboard in Sources */,
 				DFEE20D0280F22A800E1B133 /* MainViewController.swift in Sources */,
 				DFEE20BC280F1ECA00E1B133 /* AppDelegate.swift in Sources */,
 				DFEE20D42811C64E00E1B133 /* PlaceModel.swift in Sources */,
 				DFEE20D6281316C600E1B133 /* NewPlaceVC.swift in Sources */,
+				DFDFBE982819A58D00C10CE4 /* StoregeManager.swift in Sources */,
 				DFEE20D22811BDD200E1B133 /* CustomTableViewCell.swift in Sources */,
 				DFEE20BE280F1ECA00E1B133 /* SceneDelegate.swift in Sources */,
 			);
@@ -233,6 +217,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -294,6 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -347,20 +333,26 @@
 		};
 		DFEE20CD280F1ECC00E1B133 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78D86103024BF93DFE8C749D /* Pods-MyPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2P5CP9V8YJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "MyPlaces use photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,20 +368,26 @@
 		};
 		DFEE20CE280F1ECC00E1B133 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E32E665D55575AFA14D8FB8F /* Pods-MyPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2P5CP9V8YJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "MyPlaces use photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,6 +423,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
+		DF6C66DF281C625F00781199 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF6C66DB281C5BA000781199 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		DF6C66DD281C5BA000781199 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		DF6C66E0281C625F00781199 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		DF6C66E2281C625F00781199 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFEE20B0280F1ECA00E1B133 /* Project object */;
 }
