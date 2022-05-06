@@ -50,14 +50,16 @@ class NewPlaceVC: UITableViewController {
     func savePlace() {
         let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: placeImage.image?.pngData())
         if currentPlace != nil {
-            try! realm.write({
+            try! realm.write{
                 currentPlace?.name = newPlace.name
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
-            })
+                print("Edit Old")
+            }
         } else {
             StorageManager.saveObject(newPlace)
+            print("Save New")
         }
         
     }
@@ -99,14 +101,14 @@ extension NewPlaceVC: UIImagePickerControllerDelegate, UINavigationControllerDel
         dismiss(animated: true, completion: nil)
     }
     private func setupEditScrene(){
-        setupNavigationBar()
         if currentPlace != nil{
+            setupNavigationBar()
             guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {return}
             placeImage.image = image
             placeName.text = currentPlace?.name
             placeLocation.text = currentPlace?.location
             placeType.text = currentPlace?.type
-            placeImage.contentMode = .scaleAspectFill
+            placeImage.contentMode = .scaleAspectFit
         }
     }
     private func setupNavigationBar(){

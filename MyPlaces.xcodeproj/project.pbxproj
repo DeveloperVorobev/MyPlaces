@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF6C66DC281C5BA000781199 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66DB281C5BA000781199 /* Realm */; };
-		DF6C66DE281C5BA000781199 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66DD281C5BA000781199 /* RealmSwift */; settings = {ATTRIBUTES = (Required, ); }; };
+		DF3C464328257D0200927A24 /* RatingControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C464228257D0200927A24 /* RatingControll.swift */; };
 		DF6C66E1281C625F00781199 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E0281C625F00781199 /* Realm */; };
 		DF6C66E3281C625F00781199 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E2281C625F00781199 /* RealmSwift */; };
 		DF6C66E8281EE65F00781199 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20C1280F1ECA00E1B133 /* Main.storyboard */; };
@@ -46,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DF3C464228257D0200927A24 /* RatingControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControll.swift; sourceTree = "<group>"; };
 		DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregeManager.swift; sourceTree = "<group>"; };
 		DFEE20B8280F1ECA00E1B133 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE20BB280F1ECA00E1B133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +67,6 @@
 			files = (
 				DF6C66E3281C625F00781199 /* RealmSwift in Frameworks */,
 				DF6C66E1281C625F00781199 /* Realm in Frameworks */,
-				DF6C66DE281C5BA000781199 /* RealmSwift in Frameworks */,
-				DF6C66DC281C5BA000781199 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +99,7 @@
 				DFEE20BD280F1ECA00E1B133 /* SceneDelegate.swift */,
 				DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */,
 				DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */,
+				DF3C464228257D0200927A24 /* RatingControll.swift */,
 				DFEE20C1280F1ECA00E1B133 /* Main.storyboard */,
 				DFEE20C4280F1ECC00E1B133 /* Assets.xcassets */,
 				DFEE20C6280F1ECC00E1B133 /* LaunchScreen.storyboard */,
@@ -127,8 +126,6 @@
 			);
 			name = MyPlaces;
 			packageProductDependencies = (
-				DF6C66DB281C5BA000781199 /* Realm */,
-				DF6C66DD281C5BA000781199 /* RealmSwift */,
 				DF6C66E0281C625F00781199 /* Realm */,
 				DF6C66E2281C625F00781199 /* RealmSwift */,
 			);
@@ -184,6 +181,7 @@
 				DFEE20D0280F22A800E1B133 /* MainViewController.swift in Sources */,
 				DFEE20BC280F1ECA00E1B133 /* AppDelegate.swift in Sources */,
 				DFEE20D42811C64E00E1B133 /* PlaceModel.swift in Sources */,
+				DF3C464328257D0200927A24 /* RatingControll.swift in Sources */,
 				DFEE20D6281316C600E1B133 /* NewPlaceVC.swift in Sources */,
 				DFDFBE982819A58D00C10CE4 /* StoregeManager.swift in Sources */,
 				DFEE20D22811BDD200E1B133 /* CustomTableViewCell.swift in Sources */,
@@ -444,16 +442,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DF6C66DB281C5BA000781199 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		DF6C66DD281C5BA000781199 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
 		DF6C66E0281C625F00781199 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DF6C66DA281C5BA000781199 /* XCRemoteSwiftPackageReference "realm-swift" */;
