@@ -20,6 +20,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var isFiltering: Bool{
         return searchController.isActive && !searchBarIsEmpty
     }
+
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var reversedSortButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
@@ -62,6 +63,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
         cell.imageOfPlace?.layer.cornerRadius = cell.imageOfPlace.frame.height / 2
         cell.imageOfPlace?.clipsToBounds = true
+        cell.stackView.rating = Int(place.rating)
         
         return cell
     }
@@ -134,6 +136,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
         }
         tableView.reloadData()
+    }
+    private func setStarsRating (){
+        
     }
 }
 extension MainViewController: UISearchResultsUpdating{

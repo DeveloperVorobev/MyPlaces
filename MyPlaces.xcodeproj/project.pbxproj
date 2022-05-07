@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF3C464328257D0200927A24 /* RatingControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C464228257D0200927A24 /* RatingControll.swift */; };
+		DF3C46452826D8A200927A24 /* StackForMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C46442826D8A200927A24 /* StackForMainVC.swift */; };
 		DF6C66E1281C625F00781199 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E0281C625F00781199 /* Realm */; };
 		DF6C66E3281C625F00781199 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E2281C625F00781199 /* RealmSwift */; };
 		DF6C66E8281EE65F00781199 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20C1280F1ECA00E1B133 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		DF3C464228257D0200927A24 /* RatingControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControll.swift; sourceTree = "<group>"; };
+		DF3C46442826D8A200927A24 /* StackForMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackForMainVC.swift; sourceTree = "<group>"; };
 		DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregeManager.swift; sourceTree = "<group>"; };
 		DFEE20B8280F1ECA00E1B133 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE20BB280F1ECA00E1B133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				DFEE20BD280F1ECA00E1B133 /* SceneDelegate.swift */,
 				DFEE20D5281316C600E1B133 /* NewPlaceVC.swift */,
 				DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */,
+				DF3C46442826D8A200927A24 /* StackForMainVC.swift */,
 				DF3C464228257D0200927A24 /* RatingControll.swift */,
 				DFEE20C1280F1ECA00E1B133 /* Main.storyboard */,
 				DFEE20C4280F1ECC00E1B133 /* Assets.xcassets */,
@@ -185,6 +188,7 @@
 				DFEE20D6281316C600E1B133 /* NewPlaceVC.swift in Sources */,
 				DFDFBE982819A58D00C10CE4 /* StoregeManager.swift in Sources */,
 				DFEE20D22811BDD200E1B133 /* CustomTableViewCell.swift in Sources */,
+				DF3C46452826D8A200927A24 /* StackForMainVC.swift in Sources */,
 				DFEE20BE280F1ECA00E1B133 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

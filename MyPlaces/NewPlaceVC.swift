@@ -14,6 +14,7 @@ class NewPlaceVC: UITableViewController {
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
     @IBOutlet weak var placeType: UITextField!
+    @IBOutlet var ratingControl: RatingControll!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -48,13 +49,14 @@ class NewPlaceVC: UITableViewController {
         }
     }
     func savePlace() {
-        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: placeImage.image?.pngData())
+        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: placeImage.image?.pngData(), rating: Double( ratingControl.rating))
         if currentPlace != nil {
             try! realm.write{
                 currentPlace?.name = newPlace.name
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
+                currentPlace?.rating = newPlace.rating
                 print("Edit Old")
             }
         } else {
@@ -109,6 +111,7 @@ extension NewPlaceVC: UIImagePickerControllerDelegate, UINavigationControllerDel
             placeLocation.text = currentPlace?.location
             placeType.text = currentPlace?.type
             placeImage.contentMode = .scaleAspectFit
+            ratingControl.rating = Int(currentPlace?.rating ?? 0)
         }
     }
     private func setupNavigationBar(){

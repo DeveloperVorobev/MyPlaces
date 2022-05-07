@@ -9,7 +9,11 @@ import UIKit
 
 @IBDesignable class RatingControll: UIStackView {
     private var ratingButtons = [UIButton]()
-    var rating = 0
+    var rating = 0{
+        didSet {
+            updateButtonSelctionState()
+        }
+    }
     @IBInspectable var starSige:CGSize = CGSize(width: 44, height: 44){
         didSet {
             setupButtons()
@@ -37,7 +41,13 @@ import UIKit
     @objc func ratingButtonTaped(button:UIButton){
         guard let index = ratingButtons.firstIndex(of: button) else {return}
         
-        // calculate rating of
+        // calculate rating of the selected button
+        let selectedRating = index + 1
+        if selectedRating == rating {
+            rating = 0
+        } else{
+            rating = selectedRating
+        }
     }
     
     // MARK: - Private Methots
@@ -75,6 +85,12 @@ import UIKit
             // Add the buttom to stack
             addArrangedSubview(button)
             ratingButtons.append(button)
+        }
+        updateButtonSelctionState()
+    }
+    private func updateButtonSelctionState(){
+        for (index, button) in ratingButtons.enumerated(){
+            button.isSelected = index < rating
         }
     }
 }
