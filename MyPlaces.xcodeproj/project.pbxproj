@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF3C464328257D0200927A24 /* RatingControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C464228257D0200927A24 /* RatingControll.swift */; };
 		DF3C46452826D8A200927A24 /* StackForMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C46442826D8A200927A24 /* StackForMainVC.swift */; };
+		DF3C46472828297B00927A24 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C46462828297B00927A24 /* MapVC.swift */; };
 		DF6C66E1281C625F00781199 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E0281C625F00781199 /* Realm */; };
 		DF6C66E3281C625F00781199 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF6C66E2281C625F00781199 /* RealmSwift */; };
 		DF6C66E8281EE65F00781199 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = DFEE20C1280F1ECA00E1B133 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		DF3C464228257D0200927A24 /* RatingControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControll.swift; sourceTree = "<group>"; };
 		DF3C46442826D8A200927A24 /* StackForMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackForMainVC.swift; sourceTree = "<group>"; };
+		DF3C46462828297B00927A24 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		DFDFBE972819A58D00C10CE4 /* StoregeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregeManager.swift; sourceTree = "<group>"; };
 		DFEE20B8280F1ECA00E1B133 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE20BB280F1ECA00E1B133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				DF3C46442826D8A200927A24 /* StackForMainVC.swift */,
 				DF3C464228257D0200927A24 /* RatingControll.swift */,
 				DFEE20C1280F1ECA00E1B133 /* Main.storyboard */,
+				DF3C46462828297B00927A24 /* MapVC.swift */,
 				DFEE20C4280F1ECC00E1B133 /* Assets.xcassets */,
 				DFEE20C6280F1ECC00E1B133 /* LaunchScreen.storyboard */,
 				DFEE20C9280F1ECC00E1B133 /* Info.plist */,
@@ -180,6 +183,7 @@
 			files = (
 				DF6C66E8281EE65F00781199 /* Main.storyboard in Sources */,
 				DF6C66E9281EE65F00781199 /* Assets.xcassets in Sources */,
+				DF3C46472828297B00927A24 /* MapVC.swift in Sources */,
 				DF6C66EA281EE65F00781199 /* LaunchScreen.storyboard in Sources */,
 				DFEE20D0280F22A800E1B133 /* MainViewController.swift in Sources */,
 				DFEE20BC280F1ECA00E1B133 /* AppDelegate.swift in Sources */,

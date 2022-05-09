@@ -68,7 +68,16 @@ class NewPlaceVC: UITableViewController {
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap"{return}
+        let mapVC = segue.destination as! MapVC
+        mapVC.place.name = placeName.text ?? ""
+        mapVC.place.location = placeLocation.text
+        mapVC.place.type = placeType.text
+        mapVC.place.imageData = placeImage.image?.pngData()
+    }
 }
+
 
 // MARK: - TextFieldDelegare
 extension NewPlaceVC: UITextFieldDelegate{
@@ -99,7 +108,7 @@ extension NewPlaceVC: UIImagePickerControllerDelegate, UINavigationControllerDel
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         placeImage.image = info[.editedImage] as? UIImage
         placeImage.contentMode = .scaleAspectFill
-        placeImage.clipsToBounds = true
+        placeImage.clipsToBounds = false
         dismiss(animated: true, completion: nil)
     }
     private func setupEditScrene(){

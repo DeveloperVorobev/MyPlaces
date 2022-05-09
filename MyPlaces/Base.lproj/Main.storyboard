@@ -141,30 +141,6 @@
             </objects>
             <point key="canvasLocation" x="-7.2463768115942031" y="72.991071428571431"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Swa-QI-y5o">
-            <objects>
-                <viewController id="ddE-lZ-agy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ovb-wr-sfx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PID-tV-6sO">
-                                <rect key="frame" x="47" y="340" width="320" height="216"/>
-                            </pickerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ON2-n9-NSd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="PID-tV-6sO" firstAttribute="centerY" secondItem="Ovb-wr-sfx" secondAttribute="centerY" id="5OC-pI-xKq"/>
-                            <constraint firstItem="PID-tV-6sO" firstAttribute="centerX" secondItem="Ovb-wr-sfx" secondAttribute="centerX" id="5ZE-iA-Pgo"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P4r-h7-ckG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="94" y="720"/>
-        </scene>
         <!--New Place-->
         <scene sceneID="x4H-Nu-IgW">
             <objects>
@@ -184,12 +160,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyPlaces" translatesAutoresizingMaskIntoConstraints="NO" id="Zaj-km-WlR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Zaj-km-WlR">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHH-Kh-u23">
+                                                    <rect key="frame" x="344" y="180" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="GDL-bq-FLS"/>
+                                                        <constraint firstAttribute="height" constant="70" id="O5V-DR-YYj"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="map"/>
+                                                    <connections>
+                                                        <segue destination="mRu-zt-hgg" kind="presentation" identifier="showMap" modalPresentationStyle="fullScreen" id="mNx-LT-nES"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Zaj-km-WlR" secondAttribute="bottom" id="0ON-Sc-WgM"/>
+                                                <constraint firstAttribute="trailing" secondItem="HHH-Kh-u23" secondAttribute="trailing" id="KeD-a7-IhX"/>
+                                                <constraint firstAttribute="bottom" secondItem="HHH-Kh-u23" secondAttribute="bottom" id="PYu-Gc-0mq"/>
                                                 <constraint firstItem="Zaj-km-WlR" firstAttribute="leading" secondItem="LqR-Gw-pSZ" secondAttribute="leading" id="d99-Lk-Nxy"/>
                                                 <constraint firstItem="Zaj-km-WlR" firstAttribute="top" secondItem="LqR-Gw-pSZ" secondAttribute="top" id="gaT-cO-VOg"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zaj-km-WlR" secondAttribute="trailing" id="s1F-04-tux"/>
@@ -386,6 +376,52 @@
             </objects>
             <point key="canvasLocation" x="886" y="73"/>
         </scene>
+        <!--MapVC-->
+        <scene sceneID="o9c-YS-QeB">
+            <objects>
+                <viewController id="mRu-zt-hgg" customClass="MapVC" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q6V-V1-FoG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wAR-zV-wMq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12I-Va-Ggh">
+                                <rect key="frame" x="354" y="59" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VKq-Bb-Mik"/>
+                                    <constraint firstAttribute="width" constant="30" id="bxt-Gk-3Sd"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="camcel">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
+                                </state>
+                                <connections>
+                                    <action selector="clouseVC" destination="mRu-zt-hgg" eventType="touchUpInside" id="t1h-Pc-k8z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p2u-Ko-ycl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="12I-Va-Ggh" secondAttribute="trailing" constant="30" id="4DJ-gQ-WW9"/>
+                            <constraint firstItem="wAR-zV-wMq" firstAttribute="trailing" secondItem="p2u-Ko-ycl" secondAttribute="trailing" id="7kv-ff-0va"/>
+                            <constraint firstAttribute="bottom" secondItem="wAR-zV-wMq" secondAttribute="bottom" id="Ctf-RN-Fgh"/>
+                            <constraint firstItem="wAR-zV-wMq" firstAttribute="leading" secondItem="p2u-Ko-ycl" secondAttribute="leading" id="bFT-Y9-Lr7"/>
+                            <constraint firstItem="wAR-zV-wMq" firstAttribute="top" secondItem="Q6V-V1-FoG" secondAttribute="top" id="rHt-nJ-QVK"/>
+                            <constraint firstItem="12I-Va-Ggh" firstAttribute="top" secondItem="p2u-Ko-ycl" secondAttribute="top" constant="15" id="y6T-Xi-Oa7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zrk-TZ-epZ"/>
+                    <connections>
+                        <outlet property="mapView" destination="wAR-zV-wMq" id="0dT-5M-pMZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3G-Wq-hEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600.0000000000002" y="72.991071428571431"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="V7Y-JF-TOT">
             <objects>
@@ -434,7 +470,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
-        <image name="MyPlaces" width="640" height="640"/>
+        <image name="DefaultPhoto" width="640" height="640"/>
+        <image name="camcel" width="128" height="128"/>
+        <image name="map" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
