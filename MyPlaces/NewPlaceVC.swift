@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NewPlaceVC: UITableViewController {
     var currentPlace: Place?
