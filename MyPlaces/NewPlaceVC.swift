@@ -64,18 +64,22 @@ class NewPlaceVC: UITableViewController {
             StorageManager.saveObject(newPlace)
             print("Save New")
         }
-        
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap"{return}
-        let mapVC = segue.destination as! MapVC
-        mapVC.place.name = placeName.text ?? ""
-        mapVC.place.location = placeLocation.text
-        mapVC.place.type = placeType.text
-        mapVC.place.imageData = placeImage.image?.pngData()
+        guard let identifier = segue.identifier, let mapVC = segue.destination as? MapVC else {return}
+        mapVC.incomeSegueIdentifer = identifier
+        if identifier == "showPlace"{
+            mapVC.place.name = placeName.text ?? ""
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeType.text
+            mapVC.place.imageData = placeImage.image?.pngData()
+        }
     }
 }
 

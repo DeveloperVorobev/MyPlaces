@@ -34,6 +34,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Search"
     }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationItem.hidesSearchBarWhenScrolling = false
+//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.isActive = false
+    }
 
     
     // MARK: - Table view data source
@@ -44,6 +52,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return places.count
     }
+     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell

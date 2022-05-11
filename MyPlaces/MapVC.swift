@@ -15,11 +15,15 @@ class MapVC: UIViewController {
     let annotationIdentifire = "annotationIdentifire"
     let locationManager = CLLocationManager()
     let regionInMeters = 5_000.00
+    var incomeSegueIdentifer = ""
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var doneButton: UIButton!
+    @IBOutlet var adressLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        setupPlaceMark()
+        setupMapView()
         checLocationServices()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -30,9 +34,16 @@ class MapVC: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func centerViewInUserLocation() {
-        if let location = locationManager.location?.coordinate{
-            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            mapView.setRegion(region, animated: true)
+   showUserLocation()
+        }
+    @IBAction func doneButtonPressed() {
+    }
+    private func setupMapView(){
+        if incomeSegueIdentifer == "showPlace" {
+            setupPlaceMark()
+            mapPinImage.isHidden = true
+            adressLabel.isHidden = true
+            doneButton.isHidden = true
         }
     }
     private func setupPlaceMark(){
@@ -84,6 +95,7 @@ class MapVC: UIViewController {
             break
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            if incomeSegueIdentifer == "getAdress" { showUserLocation()}
             break
         @unknown default:
             print("New authorizationStatus")
@@ -95,6 +107,12 @@ class MapVC: UIViewController {
         alertController.addAction(actionOK)
         present(alertController, animated: true, completion: nil)
     }
+private func showUserLocation(){
+    if let location = locationManager.location?.coordinate{
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
+    }
+}
 }
 extension MapVC: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
