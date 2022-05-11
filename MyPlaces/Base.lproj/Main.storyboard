@@ -273,7 +273,7 @@
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="mRu-zt-hgg" kind="presentation" identifier="getAdress" modalPresentationStyle="fullScreen" id="amZ-6j-5R7"/>
+                                                        <segue destination="mRu-zt-hgg" kind="presentation" identifier="getAddress" modalPresentationStyle="fullScreen" id="amZ-6j-5R7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -450,6 +450,18 @@
                                     <action selector="doneButtonPressed" destination="mRu-zt-hgg" eventType="touchUpInside" id="zjY-Wp-VYt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFQ-8a-elg">
+                                <rect key="frame" x="182" y="772" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BUe-tT-X9B"/>
+                                    <constraint firstAttribute="height" constant="50" id="mq3-S9-mDU"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPresed" destination="mRu-zt-hgg" eventType="touchUpInside" id="GSY-iB-sgC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p2u-Ko-ycl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -461,20 +473,23 @@
                             <constraint firstAttribute="bottom" secondItem="wAR-zV-wMq" secondAttribute="bottom" id="Ctf-RN-Fgh"/>
                             <constraint firstItem="p2u-Ko-ycl" firstAttribute="trailing" secondItem="s5l-xH-bdP" secondAttribute="trailing" constant="40" id="Gon-Pd-VcO"/>
                             <constraint firstItem="xMr-m2-FM0" firstAttribute="centerY" secondItem="Q6V-V1-FoG" secondAttribute="centerY" constant="-20" id="Hna-up-czJ"/>
+                            <constraint firstItem="p2u-Ko-ycl" firstAttribute="bottom" secondItem="zFQ-8a-elg" secondAttribute="bottom" constant="40" id="Ppt-S2-VEi"/>
                             <constraint firstItem="xMr-m2-FM0" firstAttribute="centerX" secondItem="Q6V-V1-FoG" secondAttribute="centerX" id="S35-XA-GLk"/>
                             <constraint firstItem="1VY-hI-MEa" firstAttribute="centerY" secondItem="s5l-xH-bdP" secondAttribute="centerY" id="Sxe-UR-ZHP"/>
                             <constraint firstItem="wAR-zV-wMq" firstAttribute="leading" secondItem="p2u-Ko-ycl" secondAttribute="leading" id="bFT-Y9-Lr7"/>
                             <constraint firstItem="Oxq-9f-WBt" firstAttribute="leading" secondItem="p2u-Ko-ycl" secondAttribute="leading" constant="16" id="fcs-CW-oys"/>
                             <constraint firstItem="Oxq-9f-WBt" firstAttribute="top" secondItem="p2u-Ko-ycl" secondAttribute="top" constant="110" id="h9D-vX-Sxa"/>
                             <constraint firstItem="wAR-zV-wMq" firstAttribute="top" secondItem="Q6V-V1-FoG" secondAttribute="top" id="rHt-nJ-QVK"/>
+                            <constraint firstItem="zFQ-8a-elg" firstAttribute="centerX" secondItem="Q6V-V1-FoG" secondAttribute="centerX" id="t2L-5i-bBc"/>
                             <constraint firstItem="12I-Va-Ggh" firstAttribute="top" secondItem="p2u-Ko-ycl" secondAttribute="top" constant="15" id="y6T-Xi-Oa7"/>
                             <constraint firstItem="p2u-Ko-ycl" firstAttribute="trailing" secondItem="Oxq-9f-WBt" secondAttribute="trailing" constant="16" id="z96-Jn-PmQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zrk-TZ-epZ"/>
                     <connections>
-                        <outlet property="adressLabel" destination="Oxq-9f-WBt" id="tqv-u9-Mlm"/>
+                        <outlet property="addressLabel" destination="Oxq-9f-WBt" id="tqv-u9-Mlm"/>
                         <outlet property="doneButton" destination="1VY-hI-MEa" id="Xsd-0N-fRj"/>
+                        <outlet property="goButton" destination="zFQ-8a-elg" id="AtR-VE-444"/>
                         <outlet property="mapPinImage" destination="xMr-m2-FM0" id="10Q-eK-1zM"/>
                         <outlet property="mapView" destination="wAR-zV-wMq" id="0dT-5M-pMZ"/>
                     </connections>
@@ -527,12 +542,13 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="mNx-LT-nES"/>
+        <segue reference="amZ-6j-5R7"/>
         <segue reference="KBn-Wy-AdE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="DefaultPhoto" width="640" height="640"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="128" height="128"/>
         <image name="Pin" width="42" height="42"/>
         <image name="Placeholder" width="22" height="22"/>

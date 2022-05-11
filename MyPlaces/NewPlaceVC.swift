@@ -58,11 +58,9 @@ class NewPlaceVC: UITableViewController {
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
                 currentPlace?.rating = newPlace.rating
-                print("Edit Old")
             }
         } else {
             StorageManager.saveObject(newPlace)
-            print("Save New")
         }
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -74,6 +72,7 @@ class NewPlaceVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier, let mapVC = segue.destination as? MapVC else {return}
         mapVC.incomeSegueIdentifer = identifier
+        mapVC.mapVCDelegate = self
         if identifier == "showPlace"{
             mapVC.place.name = placeName.text ?? ""
             mapVC.place.location = placeLocation.text
@@ -136,4 +135,11 @@ extension NewPlaceVC: UIImagePickerControllerDelegate, UINavigationControllerDel
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
     }
+}
+extension NewPlaceVC: MapVCDelegate{
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
+    }
+    
+    
 }

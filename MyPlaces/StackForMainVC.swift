@@ -26,7 +26,6 @@ class StackForMainVC: UIStackView {
         setupImages()
     }
     private func setupImages(){
-        print("1")
         for image in ratingImages {
             removeArrangedSubview(image)
             image.removeFromSuperview()
@@ -36,7 +35,6 @@ class StackForMainVC: UIStackView {
             let readyStar = UIImageView()
             if numberOfStar <= rating  {
                 readyStar.image = UIImage(named: "filledStar")
-                print("2")
             } else {
                 readyStar.image = UIImage(named: "emptyStar")
             }

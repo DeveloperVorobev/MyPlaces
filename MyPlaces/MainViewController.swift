@@ -34,10 +34,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Search"
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationItem.hidesSearchBarWhenScrolling = false
-//    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchController.isActive = false
