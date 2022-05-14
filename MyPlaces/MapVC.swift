@@ -19,11 +19,18 @@ class MapVC: UIViewController {
     var place = Place()
     var placeCoordinate: CLLocationCoordinate2D?
     let alternateRoutes = false
-    
+    var previousLocation: CLLocation?{
+        didSet {
+            startTrackingUserLocation()
+        }
+    }
+    var directionsArray: [MKDirections] = []
     let annotationIdentifire = "annotationIdentifire"
     let locationManager = CLLocationManager()
-    let regionInMeters = 5_000.00
+    let regionInMeters = 1_000.00
     var incomeSegueIdentifer = ""
+    var debugGCDBoolValue = true
+    
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var mapPinImage: UIImageView!
     @IBOutlet var doneButton: UIButton!
@@ -47,7 +54,7 @@ class MapVC: UIViewController {
         showUserLocation()
     }
     @IBAction func goButtonPresed() {
-       getDirections()
+       getDirections(isNotTracking: true)
     }
     @IBAction func doneButtonPressed() {
         mapVCDelegate?.getAddress(addressLabel.text)
@@ -65,6 +72,16 @@ class MapVC: UIViewController {
             goButton.isHidden = false
         }
     }
+    
+    private func resetMapView(withNew directions: MKDirections){
+        
+        mapView.removeOverlays(mapView.overlays)
+        directionsArray.append(directions)
+        let _ = directionsArray.map { $0.cancel() }
+        directionsArray.removeAll()
+        
+    }
+    
     private func setupPlaceMark(){
         guard let location = place.location else {return}
         let geocoder = CLGeocoder()
@@ -143,16 +160,23 @@ class MapVC: UIViewController {
         }
     }
     
-    private func getDirections(){
+    private func getDirections(isNotTracking: Bool){
         
         guard let location = locationManager.location?.coordinate else {
             showAlert()
             return
         }
         
+       
+        if isNotTracking {
+            locationManager.startUpdatingLocation()
+            previousLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        }
+        
         guard let request = createDirectionRequest(from: location) else {return}
         
         let directions = MKDirections(request: request)
+        resetMapView(withNew: directions)
         
         directions.calculate { response, error in
             if let error = error {
@@ -163,7 +187,10 @@ class MapVC: UIViewController {
             
             for route in response.routes {
                 self.mapView.addOverlay(route.polyline)
-                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                
+                if isNotTracking{
+                    self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                }
                 
                 let distance = String(format: "%.1f", route.distance / 1000)
                 let timeInterval = route.expectedTravelTime / 60
@@ -189,7 +216,12 @@ class MapVC: UIViewController {
         
         return request
     }
+    
+    private func startTrackingUserLocation(){
+        self.getDirections(isNotTracking: false)
+    }
 }
+
 extension MapVC: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {return nil}
@@ -213,6 +245,22 @@ extension MapVC: MKMapViewDelegate{
         
         let center = getCenterLocation(for: mapView)
         let geoCoder = CLGeocoder()
+        
+        if incomeSegueIdentifer == "showPlace" && previousLocation != nil && debugGCDBoolValue{
+
+            debugGCDBoolValue = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                self.showUserLocation()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                    self.debugGCDBoolValue = true
+                }
+                
+            }
+            
+        }
+        
+        geoCoder.cancelGeocode()
         
         geoCoder.reverseGeocodeLocation(center){ (placemarks, error) in
             
@@ -245,6 +293,15 @@ extension MapVC: MKMapViewDelegate{
         renderer.strokeColor = .blue.withAlphaComponent(0.2)
         
         return renderer
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let previousLocation = previousLocation else {return}
+        let curentLoction = locations.last
+        if let distanceToCurentLocation = curentLoction?.distance(from: previousLocation){
+            guard distanceToCurentLocation > 15 else {return}
+            self.previousLocation = curentLoction
+            print("didUpdate")
+        }
     }
 }
 extension MapVC: CLLocationManagerDelegate{
