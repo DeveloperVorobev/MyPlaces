@@ -22,26 +22,34 @@ class MapVC: UIViewController {
     var previousLocation: CLLocation?{
         didSet {
             startTrackingUserLocation()
+            showUserLocation()
         }
     }
     var directionsArray: [MKDirections] = []
+    var oldDirectionsArray: [MKDirections] = []
     let annotationIdentifire = "annotationIdentifire"
     let locationManager = CLLocationManager()
     let regionInMeters = 1_000.00
     var incomeSegueIdentifer = ""
     var debugGCDBoolValue = true
     
+   
+    @IBOutlet var labelStaks: UIStackView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var mapPinImage: UIImageView!
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var goButton: UIButton!
+    @IBOutlet var distanseLaebl: UILabel!
+    @IBOutlet var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         setupMapView()
         checLocationServices()
         addressLabel.text = ""
+        setupLables(color: .gray, withAlpha: 0.3 , cornerRadius: 0)
+
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -71,6 +79,16 @@ class MapVC: UIViewController {
             doneButton.isHidden = true
             goButton.isHidden = false
         }
+    }
+    
+    private func setupLables(color: UIColor, withAlpha alpha: Double, cornerRadius: CGFloat){
+        distanseLaebl.isHidden = true
+        timeLabel.isHidden = true
+        labelStaks.backgroundColor = color.withAlphaComponent(alpha)
+        labelStaks.layer.cornerRadius = 10
+        labelStaks.clipsToBounds = true
+        distanseLaebl.clipsToBounds = true
+        timeLabel.clipsToBounds = true
     }
     
     private func resetMapView(withNew directions: MKDirections){
@@ -183,6 +201,7 @@ class MapVC: UIViewController {
                 print(error)
                 return
             }
+            
             guard let response = response else {return}
             
             for route in response.routes {
@@ -193,10 +212,10 @@ class MapVC: UIViewController {
                 }
                 
                 let distance = String(format: "%.1f", route.distance / 1000)
-                let timeInterval = route.expectedTravelTime / 60
+                let timeInterval = Int(((route.distance / 5000) * 60))
                 
-                print("Distanse: \(distance) km.")
-                print("Time interval: \(timeInterval) min.")
+                self.distanseLaebl.text = "Растояние до точки \(distance) км."
+                self.timeLabel.text = "Примерное время в пути \(timeInterval) мин."
                 
             }
         }
@@ -211,7 +230,7 @@ class MapVC: UIViewController {
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: source)
         request.destination = MKMapItem(placemark: destination)
-        request.transportType = .automobile
+        request.transportType = .walking
         request.requestsAlternateRoutes = alternateRoutes
         
         return request
@@ -219,6 +238,8 @@ class MapVC: UIViewController {
     
     private func startTrackingUserLocation(){
         self.getDirections(isNotTracking: false)
+        distanseLaebl.isHidden = false
+        timeLabel.isHidden = false
     }
 }
 
